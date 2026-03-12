@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Lead Management System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <aside class="sidebar">
+      <div class="brand-block">
+        <p class="eyebrow">LeadFlow CRM</p>
+        <h1>Client Lead Management</h1>
+        <p class="sidebar-copy">
+          Centralize incoming inquiries, monitor pipeline movement, and keep every client conversation organized.
+        </p>
+      </div>
+
+      <div class="login-card">
+        <div class="panel-heading">
+          <p class="eyebrow">Secure Access</p>
+          <h2>Admin Sign In</h2>
+        </div>
+        <p class="panel-copy">Authorized access for reviewing, updating, and converting leads.</p>
+        <form id="loginForm" class="stack-form">
+          <input type="text" name="username" placeholder="Username" required>
+          <input type="password" name="password" placeholder="Password" required>
+          <button type="submit">Sign In</button>
+        </form>
+        <button id="logoutButton" class="ghost-button hidden">Sign Out</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <section class="panel public-form-panel">
+        <div class="panel-header">
+          <div class="panel-heading">
+            <p class="eyebrow">Capture Lead</p>
+            <h2>New Client Inquiry</h2>
+          </div>
+          <p class="panel-copy">Add a lead and route it directly into the pipeline.</p>
+        </div>
+
+        <form id="leadForm" class="lead-form-grid">
+          <input type="text" name="name" placeholder="Client name" required>
+          <input type="email" name="email" placeholder="Client email" required>
+          <input type="text" name="company" placeholder="Company / Brand">
+          <input type="text" name="source" placeholder="Lead source" required>
+          <textarea name="message" placeholder="Project details or inquiry summary"></textarea>
+          <button type="submit">Save Lead</button>
+        </form>
+        <p id="leadFormMessage" class="status-message"></p>
+      </section>
+
+      <section class="stats-grid" id="statsGrid">
+        <article class="stat-card">
+          <span>Total Leads</span>
+          <strong id="totalLeads">0</strong>
+        </article>
+        <article class="stat-card">
+          <span>New</span>
+          <strong id="newLeads">0</strong>
+        </article>
+        <article class="stat-card">
+          <span>Contacted</span>
+          <strong id="contactedLeads">0</strong>
+        </article>
+        <article class="stat-card">
+          <span>Converted</span>
+          <strong id="convertedLeads">0</strong>
+        </article>
+      </section>
+
+      <section class="dashboard-grid">
+        <section class="panel leads-panel">
+          <div class="panel-header">
+            <div class="panel-heading">
+              <p class="eyebrow">Pipeline</p>
+              <h2>Lead Overview</h2>
+            </div>
+            <input id="searchInput" type="search" placeholder="Search leads">
+          </div>
+          <div id="leadList" class="lead-list empty-state">
+            Sign in to access your lead pipeline.
+          </div>
+        </section>
+
+        <section class="panel detail-panel">
+          <div class="panel-header">
+            <div class="panel-heading">
+              <p class="eyebrow">Details</p>
+              <h2 id="detailTitle">Select a lead</h2>
+            </div>
+            <select id="statusSelect" disabled>
+              <option value="new">New</option>
+              <option value="contacted">Contacted</option>
+              <option value="converted">Converted</option>
+            </select>
+          </div>
+
+          <div id="leadDetails" class="detail-body empty-state">
+            Select a lead to review its details, update status, and record follow-up activity.
+          </div>
+
+          <form id="noteForm" class="note-form hidden">
+            <textarea id="noteText" placeholder="Add a follow-up note"></textarea>
+            <button type="submit">Save Note</button>
+          </form>
+          <p id="dashboardMessage" class="status-message"></p>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

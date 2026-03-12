@@ -1,0 +1,25 @@
+{
+  "name": "mini-crm",
+  "version": "1.0.0",
+  "description": "Client Lead Management System for Future Interns Task 2",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "crm",
+    "lead-management",
+    "future-interns",
+    "express",
+    "dashboard"
+  ],
+  "author": "Abhay Das Malikaveettil",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0"
+  }
+}

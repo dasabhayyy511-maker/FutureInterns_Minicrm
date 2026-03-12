@@ -1,0 +1,102 @@
+[
+  {
+    "id": "b57a0eee-3d02-493c-82d2-660994f59414",
+    "name": "Sarah Ahmed",
+    "email": "sarah@brightstudio.co",
+    "source": "Website Contact Form",
+    "status": "new",
+    "company": "Bright Studio",
+    "message": "Need a landing page and lead capture system for our design agency.",
+    "notes": [
+      {
+        "id": "3965af4a-cbad-4b15-b743-8076a8153054",
+        "text": "Initial inquiry received from the website.",
+        "createdAt": "2026-03-12T09:44:31.391Z"
+      }
+    ],
+    "createdAt": "2026-03-08T09:00:00.000Z",
+    "updatedAt": "2026-03-08T09:00:00.000Z"
+  },
+  {
+    "id": "ee343f82-0c50-4c40-9d5a-c7cdca276a74",
+    "name": "David Thomas",
+    "email": "david@northstarlogistics.com",
+    "source": "Referral",
+    "status": "contacted",
+    "company": "Northstar Logistics",
+    "message": "Looking for a dashboard to track incoming sales leads across multiple channels.",
+    "notes": [
+      {
+        "id": "d37c92a6-9165-47a0-9771-a1a7146dfa23",
+        "text": "Reached out by email and scheduled a follow-up call.",
+        "createdAt": "2026-03-12T09:44:31.393Z"
+      }
+    ],
+    "createdAt": "2026-03-06T11:30:00.000Z",
+    "updatedAt": "2026-03-10T14:00:00.000Z"
+  },
+  {
+    "id": "8791ca5e-26f0-4d1c-af49-59fda6709925",
+    "name": "Maria Lopez",
+    "email": "maria@freshbakeshop.com",
+    "source": "Instagram Campaign",
+    "status": "converted",
+    "company": "Fresh Bake Shop",
+    "message": "Interested in automating customer inquiries and lead follow-ups.",
+    "notes": [
+      {
+        "id": "5cbaec4a-e843-4311-ad12-97d958c7c7ab",
+        "text": "Proposal approved. Moving to onboarding stage.",
+        "createdAt": "2026-03-12T09:44:31.393Z"
+      }
+    ],
+    "createdAt": "2026-03-02T16:15:00.000Z",
+    "updatedAt": "2026-03-11T10:20:00.000Z"
+  },
+  {
+    "id": "84fde6e3-df42-45d2-aaf5-da4b81359ac9",
+    "name": "John Thomas",
+    "email": "john@example.com",
+    "source": ".",
+    "company": "UniqueWorks",
+    "message": "Need help",
+    "status": "converted",
+    "notes": [
+      {
+        "id": "0b671def-304f-467d-a516-f0ad7c56279c",
+        "text": "okay",
+        "createdAt": "2026-03-12T10:07:40.661Z"
+      },
+      {
+        "id": "072b0467-93b0-4b19-86e6-69652bc93090",
+        "text": "Lead created from the contact form.",
+        "createdAt": "2026-03-12T10:07:04.130Z"
+      }
+    ],
+    "createdAt": "2026-03-12T10:07:04.130Z",
+    "updatedAt": "2026-03-12T10:07:57.769Z"
+  },
+  {
+    "id": "1a751405-9951-4541-b907-e85432afb9d4",
+    "name": "Test Client",
+    "email": "testclient@example.com",
+    "source": "Website",
+    "company": "Test Company",
+    "message": "Need a CRM demo.",
+    "status": "contacted",
+    "notes": [
+      {
+        "id": "28a2bad4-ac20-4f6f-84b9-ccd7af361d03",
+        "text": "Follow-up call scheduled for tomorrow.",
+        "createdAt": "2026-03-12T10:13:37.158Z"
+      },
+      {
+        "id": "e824b8f3-b4fc-47b2-b566-638f85415845",
+        "text": "Lead created from the contact form.",
+        "createdAt": "2026-03-12T10:13:36.571Z"
+      }
+    ],
+    "createdAt": "2026-03-12T10:13:36.571Z",
+    "updatedAt": "2026-03-12T10:13:37.158Z"
+  }
+]
