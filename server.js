@@ -247,6 +247,20 @@ app.post('/api/leads/:id/notes', requireAuth, (req, res) => {
   res.status(201).json({ message: 'Follow-up note added.', lead, note });
 });
 
+app.delete('/api/leads/:id', requireAuth, (req, res) => {
+  const { id } = req.params;
+  const leads = readJson(LEADS_FILE);
+  const index = leads.findIndex((item) => item.id === id);
+
+  if (index === -1) {
+    return res.status(404).json({ message: 'Lead not found.' });
+  }
+
+  const [deletedLead] = leads.splice(index, 1);
+  writeJson(LEADS_FILE, leads);
+
+  res.json({ message: 'Lead deleted successfully.', lead: deletedLead });
+});
 app.get(/.*/, (_req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
@@ -255,4 +269,5 @@ app.listen(PORT, () => {
   console.log(`Mini CRM running on http://localhost:${PORT}`);
   console.log('Default admin login -> username: admin | password: admin123');
 });
+
 

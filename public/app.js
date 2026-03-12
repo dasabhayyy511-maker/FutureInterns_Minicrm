@@ -7,6 +7,7 @@ const detailTitle = document.getElementById('detailTitle');
 const statusSelect = document.getElementById('statusSelect');
 const noteForm = document.getElementById('noteForm');
 const noteText = document.getElementById('noteText');
+const deleteLeadButton = document.getElementById('deleteLeadButton');
 const leadFormMessage = document.getElementById('leadFormMessage');
 const dashboardMessage = document.getElementById('dashboardMessage');
 const searchInput = document.getElementById('searchInput');
@@ -17,7 +18,7 @@ let isAuthenticated = false;
 
 function setStatusMessage(element, message, isError = false) {
   element.textContent = message;
-  element.style.color = isError ? '#ff7a90' : '#9facc8';
+  element.style.color = isError ? '#c45353' : '#8d95a3';
 }
 
 function formatDate(value) {
@@ -44,6 +45,7 @@ function renderLeadDetails() {
     leadDetails.textContent = 'Select a lead to review its details, update status, and record follow-up activity.';
     statusSelect.disabled = true;
     noteForm.classList.add('hidden');
+    deleteLeadButton.classList.add('hidden');
     return;
   }
 
@@ -51,6 +53,7 @@ function renderLeadDetails() {
   statusSelect.disabled = !isAuthenticated;
   statusSelect.value = lead.status;
   noteForm.classList.toggle('hidden', !isAuthenticated);
+  deleteLeadButton.classList.toggle('hidden', !isAuthenticated);
 
   leadDetails.className = 'detail-body';
   leadDetails.innerHTML = `
@@ -147,6 +150,11 @@ async function fetchLeads() {
 
   leads = data.leads;
   updateStats(data.summary);
+
+  if (selectedLeadId && !getSelectedLead()) {
+    selectedLeadId = leads[0]?.id || null;
+  }
+
   renderLeadList();
 }
 
@@ -212,6 +220,7 @@ leadForm.addEventListener('submit', async (event) => {
   leadForm.reset();
   setStatusMessage(leadFormMessage, 'Lead saved successfully.');
   if (isAuthenticated) {
+    selectedLeadId = data.lead.id;
     await fetchLeads();
   }
 });
@@ -258,9 +267,31 @@ noteForm.addEventListener('submit', async (event) => {
   await fetchLeads();
 });
 
+deleteLeadButton.addEventListener('click', async () => {
+  if (!selectedLeadId) return;
+
+  const lead = getSelectedLead();
+  const confirmed = window.confirm(`Delete ${lead.name} from the CRM?`);
+  if (!confirmed) return;
+
+  const response = await fetch(`/api/leads/${selectedLeadId}`, {
+    method: 'DELETE'
+  });
+
+  const data = await response.json();
+
+  if (!response.ok) {
+    setStatusMessage(dashboardMessage, data.message || 'Could not delete lead.', true);
+    return;
+  }
+
+  selectedLeadId = null;
+  setStatusMessage(dashboardMessage, 'Lead deleted successfully.');
+  await fetchLeads();
+});
+
 searchInput.addEventListener('input', () => {
   renderLeadList();
 });
 
 checkSession();
-
