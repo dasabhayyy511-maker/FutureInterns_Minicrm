@@ -52,51 +52,5 @@
     ],
     "createdAt": "2026-03-02T16:15:00.000Z",
     "updatedAt": "2026-03-11T10:20:00.000Z"
-  },
-  {
-    "id": "84fde6e3-df42-45d2-aaf5-da4b81359ac9",
-    "name": "John Thomas",
-    "email": "john@example.com",
-    "source": ".",
-    "company": "UniqueWorks",
-    "message": "Need help",
-    "status": "converted",
-    "notes": [
-      {
-        "id": "0b671def-304f-467d-a516-f0ad7c56279c",
-        "text": "okay",
-        "createdAt": "2026-03-12T10:07:40.661Z"
-      },
-      {
-        "id": "072b0467-93b0-4b19-86e6-69652bc93090",
-        "text": "Lead created from the contact form.",
-        "createdAt": "2026-03-12T10:07:04.130Z"
-      }
-    ],
-    "createdAt": "2026-03-12T10:07:04.130Z",
-    "updatedAt": "2026-03-12T10:07:57.769Z"
-  },
-  {
-    "id": "1a751405-9951-4541-b907-e85432afb9d4",
-    "name": "Test Client",
-    "email": "testclient@example.com",
-    "source": "Website",
-    "company": "Test Company",
-    "message": "Need a CRM demo.",
-    "status": "contacted",
-    "notes": [
-      {
-        "id": "28a2bad4-ac20-4f6f-84b9-ccd7af361d03",
-        "text": "Follow-up call scheduled for tomorrow.",
-        "createdAt": "2026-03-12T10:13:37.158Z"
-      },
-      {
-        "id": "e824b8f3-b4fc-47b2-b566-638f85415845",
-        "text": "Lead created from the contact form.",
-        "createdAt": "2026-03-12T10:13:36.571Z"
-      }
-    ],
-    "createdAt": "2026-03-12T10:13:36.571Z",
-    "updatedAt": "2026-03-12T10:13:37.158Z"
   }
 ]
